@@ -1,7 +1,6 @@
 package vendorgateway
 
 import (
-	"github.com/3JoB/anthropic-sdk-go/v2/data"
 	"github.com/3JoB/ulib/litefmt"
 	"github.com/sugawarayuuta/sonnet"
 )
@@ -65,14 +64,14 @@ func (s *BotSpecificData) Set(m *Message) error {
 	return nil
 }
 
-func (s *BotSpecificData) Build(next string, d *data.MessageModule) error {
-	if d.Human == "" {
-		return data.ErrPromptHumanEmpty
+func (s *BotSpecificData) Build(next string, m *Message) error {
+	if m.User == "" {
+		return ErrEmptyUserInput
 	}
-	if d.Assistant == "" {
-		s.Prompt = litefmt.Sprint(next, "\n\nHuman: ", d.Human, "\n\nAssistant:")
+	if m.Assistant == "" {
+		s.Prompt = litefmt.Sprint(next, "\n\nHuman: ", m.User, "\n\nAssistant:")
 	} else {
-		s.Prompt = litefmt.Sprint(next, "\n\nHuman: ", d.Human, "\n\nAssistant:", d.Assistant)
+		s.Prompt = litefmt.Sprint(next, "\n\nHuman: ", m.User, "\n\nAssistant:", m.Assistant)
 	}
 	return nil
 }
