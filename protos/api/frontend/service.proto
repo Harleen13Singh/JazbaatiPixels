@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package myproto;
+
+import "api/rpc/status.proto";
+
+service JazbaatiPixels {
+  // GetAndUploadImage is useful to, add comments here, upoload image is ok and
+  rpc GetAndUploadImage (GetAndUploadImageRequest) returns (GetAndUploadImageResponse);
+}
+
+message GetAndUploadImageRequest {
+  string url = 1;
+}
+
+message GetAndUploadImageResponse {
+  rpc.Status status = 1;
+  string id = 2;
+}

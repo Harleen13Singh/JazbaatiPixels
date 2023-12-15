@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package rpc;
+
+option go_package = "github.com/personal/ustaad/api/rpc";
+
+// Status type defines a logical error model that is common across RPC methods
+message Status {
+  // Describe the status(or error) code of the request
+  // Enum values defined in https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto will be used for GRPC status codes
+  // RPC method specific status codes have to be defined in the RPC method's response message and should start from 100
+  uint32 code = 1;
+
+  // Short message to describe the statusCode.
+  // The message will be localized as per user's language preference.
+  string short_message = 2;
+
+  // Debug message to send debug information from application.
+  // It is expected to be used only in dev environment for testing.
+  // Client must not display debug_message anywhere on the UI.
+  string debug_message = 3;
+}
