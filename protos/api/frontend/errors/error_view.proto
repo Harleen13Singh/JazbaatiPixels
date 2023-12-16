@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package frontend.errors;
+
+option go_package =  "github.com/personal/jazbaatipixels/api/frontend/errors";
+
+// ErrorView represents the error UI for the client. It stores the
+// error view type and the corresponding options for the ErrorViewType
+// It contains the information that is needs to be shown on the
+// client for graceful handling of failures/errors.
+message ErrorView {
+  ErrorViewType type = 1;
+
+  // screen_options is the payload that is used by the error view type
+  // options map one-to-one with ErrorViewType
+  oneof options {
+    FullScreenErrorView full_screen_error_view = 2;
+    BottomSheetErrorView bottom_sheet_error_view = 3;
+  }
+}
+
+// ErrorViewType represents how the error has to be presented to the user
+enum ErrorViewType {
+  ERROR_TYPE_UNSPECIFIED = 0;
+
+  FULL_SCREEN = 1;
+
+  BOTTOM_SHEET = 2;
+}
+
+message FullScreenErrorView {
+  string title = 1;
+  string sub_title = 2;
+}
+
+message BottomSheetErrorView {
+  string title = 1;
+  string sub_title = 2;
+}

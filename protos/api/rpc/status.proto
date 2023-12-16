@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package rpc;
 
-option go_package = "github.com/personal/ustaad/api/rpc";
+option go_package = "github.com/personal/jazbaatipixels/api/rpc";
 
 // Status type defines a logical error model that is common across RPC methods
 message Status {

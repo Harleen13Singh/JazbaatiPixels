@@ -1,19 +1,30 @@
 syntax = "proto3";
 
-package myproto;
+package frontend;
 
 import "api/rpc/status.proto";
+import "api/frontend/header/response.proto";
 
-service JazbaatiPixels {
-  // GetAndUploadImage is useful to, add comments here, upoload image is ok and
-  rpc GetAndUploadImage (GetAndUploadImageRequest) returns (GetAndUploadImageResponse);
+// Frontend service is the user facing service and all the RPCs exposed to the client(mobile/web) will reside in this service
+// Only UI facing logic should reside in the FE service and it should call further BE services for gathering the data and apply any logic
+service Frontend {
+  // StartChatSession is useful to start the chat with the bot
+  rpc StartChatSession (StartChatSessionRequest) returns (StartChatSessionResponse);
 }
 
-message GetAndUploadImageRequest {
-  string url = 1;
+message StartChatSessionRequest {
+  // unique identifier for a user
+  string user_id = 1;
+  oneof request_type {
+    bytes image = 2;
+    string message = 3;
+  }
 }
 
-message GetAndUploadImageResponse {
-  rpc.Status status = 1;
-  string id = 2;
+message StartChatSessionResponse {
+  header.ResponseHeader resp_header = 1;
+  // optional: will be returned only if the bot has replied, else it will be empty
+  // client should handle the empty response
+  string response = 2;
+
 }

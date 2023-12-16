@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package pkg;
+
+option go_package = "github.com/personal/jazbaatipixels/api/pkg";
+
+// Image is the
+message Image {
+  bytes image = 1;
+}

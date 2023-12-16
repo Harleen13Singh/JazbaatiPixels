@@ -1,0 +1,4 @@
+// vg service will have 2 RPCs, one will upload the picture and return ack
+// second will be used for chatting
+
+// frontend will only have 1 rpc

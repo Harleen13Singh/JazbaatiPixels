@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package frontend.header;
+
+import "api/frontend/errors/error_view.proto";
+import "api/rpc/status.proto";
+
+option go_package ="github.com/personal/jazbaatipixels/api/frontend/header";
+
+
+// ResponseHeader is a field that should be a part of every response message
+message ResponseHeader {
+  rpc.Status status = 1;
+  errors.ErrorView error_view = 2;
+}
