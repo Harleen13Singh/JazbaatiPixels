@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package vendorgateway.enums;
+
+
+enum Vendor {
+    VENDOR_UNSPECIFIED = 0;
+    VENDOR_CLAUDE = 1;
+}

@@ -1,4 +1,35 @@
-// vg service will have 2 RPCs, one will upload the picture and return ack
-// second will be used for chatting
+syntax = "proto3";
 
-// frontend will only have 1 rpc
+package vendorgateway;
+
+import "api/rpc/status.proto";
+import "api/vendorgateway/enums/enums.proto";
+
+// VendorGateway service is responsible to communicate with external vendors
+service VendorGateway {
+  // UploadImage is useful to uplaad images with the respective vendors
+  rpc UploadImage(UploadImageRequest) returns (UploadImageResponse);
+  // Chat is useful to ask some questions from the vendor i.e. the bot
+  rpc Chat(ChatRequest) returns (ChatResponse);
+}
+
+message UploadImageRequest {
+  enums.Vendor vendor = 1;
+  bytes image = 2;
+}
+
+message UploadImageResponse {
+  rpc.Status status = 1;
+  // optional field, will only be returend if vendor returns something in response
+  string response = 2;
+}
+
+message ChatRequest {
+  string user_query = 1;
+}
+
+message ChatResponse {
+  rpc.Status status = 1;
+  // optional field, will only be returend if vendor returns something in response
+  string respone = 2;
+}
