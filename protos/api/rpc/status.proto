@@ -1,3 +1,5 @@
+// command to generate the go code:
+// protoc --go_out=/Users/harleensingh/go/src/github.com/personal/jazbaatipixels/api/rpc --go_opt=paths=source_relative --proto_path=/Users/harleensingh/go/src/github.com/personal/jazbaatipixels/protos/api/rpc /Users/harleensingh/go/src/github.com/personal/jazbaatipixels/protos/api/rpc/status.proto
 syntax = "proto3";
 
 package rpc;

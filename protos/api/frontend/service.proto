@@ -2,8 +2,10 @@ syntax = "proto3";
 
 package frontend;
 
-import "api/rpc/status.proto";
 import "api/frontend/header/response.proto";
+
+option go_package ="github.com/personal/jazbaatipixels/api/frontend";
+
 
 // Frontend service is the user facing service and all the RPCs exposed to the client(mobile/web) will reside in this service
 // Only UI facing logic should reside in the FE service and it should call further BE services for gathering the data and apply any logic

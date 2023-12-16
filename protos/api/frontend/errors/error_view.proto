@@ -1,3 +1,6 @@
+// command to generate the go code:
+//  protoc --go_out=/Users/harleensingh/go/src/github.com/personal/jazbaatipixels/api/frontend/errors  --go_opt=paths=source_relative --proto_path=/Users/harleensingh/go/src/github.com/personal/jazbaatipix
+//els/protos/api/frontend/errors /Users/harleensingh/go/src/github.com/personal/jazbaatipixels/protos/api/frontend/errors/error_view.proto
 syntax = "proto3";
 
 package frontend.errors;
