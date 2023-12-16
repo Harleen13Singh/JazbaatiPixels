@@ -54,6 +54,8 @@ func (c *Client) Send(req *VendorRequest) (*VendorResponse, error) {
 	apiReq, apiRes := c.Acquire(req.Url)
 	// release the acquired connection to back to the pool
 	defer c.Release(apiReq, apiRes)
+	// todo(Harleen Singh): revisit the logic
+	return nil, nil
 }
 
 // Acquire returns an empty fasthttp instance from request pool.

@@ -27,7 +27,8 @@ message UploadImageResponse {
 }
 
 message ChatRequest {
-  string user_query = 1;
+  enums.Vendor vendor = 1;
+  string user_query = 2;
 }
 
 message ChatResponse {
