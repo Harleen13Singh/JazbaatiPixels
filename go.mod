@@ -1,4 +1,4 @@
-module github.com/personal/JazbaatiPixels
+module github.com/personal/jazbaatipixels
 
 go 1.20
 
@@ -6,6 +6,7 @@ require (
 	github.com/3JoB/ulib v1.39.0
 	github.com/sugawarayuuta/sonnet v0.0.0-20231004000330-239c7b6e4ce8
 	github.com/valyala/fasthttp v1.51.0
+	google.golang.org/protobuf v1.31.0
 )
 
 require (

@@ -5,6 +5,8 @@ package vendorgateway;
 import "api/rpc/status.proto";
 import "api/vendorgateway/enums/enums.proto";
 
+option go_package = "github.com/personal/jazbaatipixels/api/vendorgateway";
+
 // VendorGateway service is responsible to communicate with external vendors
 service VendorGateway {
   // UploadImage is useful to uplaad images with the respective vendors
