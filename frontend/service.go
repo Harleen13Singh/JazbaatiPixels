@@ -13,6 +13,9 @@ import (
 )
 
 type Service struct {
+	// UnimplementedFrontendServer must be embedded to have forward compatible implementations.
+	// this is useful to run time panics as this struct implements all the methods in the gRPC service
+	fePb.UnimplementedFrontendServer
 	vgClient vgPb.VendorGatewayClient
 }
 

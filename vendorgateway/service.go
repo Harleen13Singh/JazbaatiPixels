@@ -10,7 +10,11 @@ import (
 	vgEnumsPb "github.com/personal/jazbaatipixels/api/vendorgateway/enums"
 )
 
-type Service struct{}
+type Service struct {
+	// UnimplementedVendorGatewayServer must be embedded to have forward compatible implementations.
+	// this is useful to run time panics as this struct implements all the methods in the gRPC service
+	vgPb.UnimplementedVendorGatewayServer
+}
 
 func NewService() *Service {
 	return &Service{}
