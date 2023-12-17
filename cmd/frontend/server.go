@@ -5,6 +5,7 @@ import (
 	"net"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 
 	fePb "github.com/personal/jazbaatipixels/api/frontend"
 	"github.com/personal/jazbaatipixels/api/vendorgateway"
@@ -17,6 +18,7 @@ func main() {
 		log.Panic("failed to listen,err: %w", err)
 	}
 	grpcServer := grpc.NewServer()
+	reflection.RegisterV1(grpcServer)
 	vgConn, vgConnErr := grpc.Dial("localhost:3418")
 	if err != nil {
 		log.Panic("failed to connect with vg service,err: %w", vgConnErr)
