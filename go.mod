@@ -4,8 +4,8 @@ go 1.20
 
 require (
 	github.com/3JoB/ulib v1.39.0
+	github.com/3JoB/unsafeConvert v1.6.0
 	github.com/google/uuid v1.3.1
-	github.com/sugawarayuuta/sonnet v0.0.0-20231004000330-239c7b6e4ce8
 	github.com/valyala/fasthttp v1.51.0
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20231002182017-d307bd883b97
 	google.golang.org/grpc v1.60.0
@@ -13,7 +13,6 @@ require (
 )
 
 require (
-	github.com/3JoB/unsafeConvert v1.6.0 // indirect
 	github.com/andybalholm/brotli v1.0.6 // indirect
 	github.com/goccy/go-reflect v1.2.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect

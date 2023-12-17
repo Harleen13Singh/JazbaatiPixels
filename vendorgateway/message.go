@@ -1,9 +1,10 @@
 package vendorgateway
 
 import (
+	"encoding/json"
+
 	"github.com/3JoB/ulib/litefmt"
 	"github.com/3JoB/unsafeConvert"
-	"github.com/sugawarayuuta/sonnet"
 )
 
 type VendorRequest struct {
@@ -48,7 +49,7 @@ type VendorResponse struct {
 }
 
 func (r *VendorResponse) ToString() string {
-	d, _ := sonnet.Marshal(r)
+	d, _ := json.Marshal(r)
 	return unsafeConvert.StringPointer(d)
 }
 
